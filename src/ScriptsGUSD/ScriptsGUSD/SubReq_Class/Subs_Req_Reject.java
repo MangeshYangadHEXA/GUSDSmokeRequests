@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.chromium.ChromiumOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,10 +18,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Subs_Req_Reject {
 
 	public static void main(String[] args) throws InterruptedException {
-
-
-		   System.setProperty("webdriver.chrome.driver", "E:\\chromedriver-win64\\chromedriver.exe");
-		   ChromeOptions co =new ChromeOptions();
+		System.setProperty("webdriver.chrome.driver", "E:\\chromedriver-win64\\chromedriver.exe");
+		ChromiumOptions co =new ChromeOptions();
 		   co.setBinary("C:\\Users\\BlueOrbit\\Downloads\\chrome-win64\\chrome.exe");
 			
 			//System.setProperty("webdriver.gecko.driver", "E:\\Mangesh\\geckodriver-v0.33.0-win64\\geckodriver.exe");
@@ -34,19 +33,19 @@ public class Subs_Req_Reject {
 			driver.get("https://main.dz66lonf4fc3g.amplifyapp.com/");
 			System.out.println(driver.getTitle());
 	        
-			
+		
 			
 			 Duration waitTime = Duration.ofSeconds(80); // 10 seconds
 
 			 WebDriverWait wait = new WebDriverWait(driver, waitTime);
-		       
+			 
 		        WebElement element1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='required-email']")));
 		        element1.sendKeys("sidhantpise001@gmail.com");
 		        
 		        WebElement element2 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='password']")));
 		        element2.sendKeys("Gusd@2023");
 		        
-		        WebElement element3 =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
+		        WebElement element3 =(WebElement) wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
 		        element3.click();
 		        System.out.println("Sign in the application");
 		        
