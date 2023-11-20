@@ -1,4 +1,4 @@
-package SubReq_Class;
+package ScriptsGUSD.SubReq_Class;
 
 import java.time.Duration;
 
