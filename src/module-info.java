@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author BlueOrbit
- *
- */
-module GusdProject {
-}
